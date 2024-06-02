@@ -17,7 +17,7 @@ public class TournamentWithGUI extends Application{
         stage.show();
 
         stage.setOnCloseRequest(event -> {
-            System.out.println("Window is closing");
+            System.out.println("Emailed");
         });
     }
 }

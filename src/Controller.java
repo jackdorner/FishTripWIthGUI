@@ -9,12 +9,12 @@ public class Controller {
     private static Fisherman Bob = new Fisherman("Bob");
     private static Fisherman Brent = new Fisherman("Brent");
     private static Fisherman Mark = new Fisherman("Mark");
-    private int day;
-    private String person;
-    private String fish;
-    private String tournament;
-    private String action;
-    private String text;
+    private int day = 0;
+    private String person = "";
+    private String fish = "";
+    private String tournament = "";
+    private String action = "";
+    private String text = "";
 
     @FXML
     private Button bobButton;
@@ -36,6 +36,8 @@ public class Controller {
     private Button removeButton;
     @FXML
     private Button displayButton;
+    @FXML
+    private Button tournamentButton;
     @FXML
     private Button multiButton;
     @FXML
@@ -135,6 +137,7 @@ public class Controller {
         addButton.setStyle("-fx-background-color: #808080;");
         removeButton.setStyle("-fx-background-color: #808080;");
         displayButton.setStyle("-fx-background-color: #808080;");
+        tournamentButton.setStyle("-fx-background-color: #808080;");
     }
 
     @FXML
@@ -145,6 +148,7 @@ public class Controller {
         addButton.setStyle("-fx-background-color: #808080;");
         removeButton.setStyle("-fx-background-color: #808080;");
         displayButton.setStyle("-fx-background-color: #808080;");
+        tournamentButton.setStyle("-fx-background-color: #808080;");
     }
 
     @FXML
@@ -155,6 +159,7 @@ public class Controller {
         printButton.setStyle("-fx-background-color: #808080;");
         removeButton.setStyle("-fx-background-color: #808080;");
         displayButton.setStyle("-fx-background-color: #808080;");
+        tournamentButton.setStyle("-fx-background-color: #808080;");
     }
 
     @FXML
@@ -165,6 +170,7 @@ public class Controller {
         addButton.setStyle("-fx-background-color: #808080;");
         printButton.setStyle("-fx-background-color: #808080;");
         displayButton.setStyle("-fx-background-color: #808080;");
+        tournamentButton.setStyle("-fx-background-color: #808080;");
     }
 
     @FXML
@@ -175,6 +181,18 @@ public class Controller {
         addButton.setStyle("-fx-background-color: #808080;");
         removeButton.setStyle("-fx-background-color: #808080;");
         printButton.setStyle("-fx-background-color: #808080;");
+        tournamentButton.setStyle("-fx-background-color: #808080;");
+    }
+
+    @FXML
+    private void tournament(ActionEvent actionEvent) {
+        action = "tournament";
+        tournamentButton.setStyle("-fx-background-color: #90ee90;");
+        emailButton.setStyle("-fx-background-color: #808080;");
+        addButton.setStyle("-fx-background-color: #808080;");
+        removeButton.setStyle("-fx-background-color: #808080;");
+        printButton.setStyle("-fx-background-color: #808080;");
+        displayButton.setStyle("-fx-background-color: #808080;");
     }
 
     @FXML
@@ -396,5 +414,80 @@ public class Controller {
     @FXML
     private void getText(ActionEvent actionEvent) {
         text = inputField.getText();
+        go();
+    }
+
+    private void go() {
+        switch (action) {
+            case "print": print();
+            case "email": emailResults();
+            case "add": add();
+            case "remove": remove();
+            case "display": display();
+            case "tournament": addTournamentResults();
+            default: reset();
+        }
+    }
+
+    private void print() {
+
+    }
+
+    private void emailResults() {
+
+    }
+
+    private void add() {
+
+    }
+
+    private void remove() {
+
+    }
+
+    private void display() {
+
+    }
+
+    private void addTournamentResults() {
+
+    }
+
+    private void reset() {
+        inputField.setText("");
+        crappieButton.setStyle("-fx-background-color: #808080;");
+        walleyeButton.setStyle("-fx-background-color: #808080;");
+        northernButton.setStyle("-fx-background-color: #808080;");
+        muskyButton.setStyle("-fx-background-color: #808080;");
+        perchButton.setStyle("-fx-background-color: #808080;");
+        bassButton.setStyle("-fx-background-color: #808080;");
+        day7Button.setStyle("-fx-background-color: #808080;");
+        day2Button.setStyle("-fx-background-color: #808080;");
+        day3Button.setStyle("-fx-background-color: #808080;");
+        day4Button.setStyle("-fx-background-color: #808080;");
+        day5Button.setStyle("-fx-background-color: #808080;");
+        day6Button.setStyle("-fx-background-color: #808080;");
+        day1Button.setStyle("-fx-background-color: #808080;");
+        sizeButton.setStyle("-fx-background-color: #808080;");
+        trollingButton.setStyle("-fx-background-color: #808080;");
+        bumperButton.setStyle("-fx-background-color: #808080;");
+        landButton.setStyle("-fx-background-color: #808080;");
+        bassholeButton.setStyle("-fx-background-color: #808080;");
+        multiButton.setStyle("-fx-background-color: #808080;");
+        displayButton.setStyle("-fx-background-color: #808080;");
+        emailButton.setStyle("-fx-background-color: #808080;");
+        addButton.setStyle("-fx-background-color: #808080;");
+        removeButton.setStyle("-fx-background-color: #808080;");
+        printButton.setStyle("-fx-background-color: #808080;");
+        bobButton.setStyle("-fx-background-color: #808080;");
+        jackButton.setStyle("-fx-background-color: #808080;");
+        brentButton.setStyle("-fx-background-color: #808080;");
+        glenButton.setStyle("-fx-background-color: #808080;");
+        markButton.setStyle("-fx-background-color: #808080;");
+        person = "";
+        day = 0;
+        fish = "";
+        action = "";
+        tournament = "";
     }
 }
