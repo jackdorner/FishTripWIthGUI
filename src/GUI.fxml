@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <children>
+        <ButtonBar layoutY="8.0" prefHeight="40.0" prefWidth="705.0">
+            <buttons>
+                <Button fx:id="bobButton" mnemonicParsing="false" onAction="#bob" text="Bob" ButtonBar.buttonData="LEFT" />
+                <Button fx:id="brentButton" mnemonicParsing="false" onAction="#brent" text="Brent" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="glenButton" mnemonicParsing="false" onAction="#glen" text="Glen" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="jackButton" mnemonicParsing="false" onAction="#jack" text="Jack" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="markButton" mnemonicParsing="false" onAction="#mark" text="Mark" ButtonBar.buttonData="LEFT"/>
+            </buttons>
+        </ButtonBar>
+        <ButtonBar layoutX="-1.0" layoutY="128.0" prefHeight="40.0" prefWidth="705.0">
+            <buttons>
+                <Button fx:id="printButton" minWidth="59.0" mnemonicParsing="false" onAction="#printScores" prefHeight="25.0" text="Print Socres" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="emailButton" mnemonicParsing="false" onAction="#email" text="Email" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="addButton" mnemonicParsing="false" onAction="#addFish" text="Add Fish" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="removeButton" mnemonicParsing="false" onAction="#removeFish" text="Remove Fish" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="displayButton" mnemonicParsing="false" onAction="#displayFish" text="Display Fish" ButtonBar.buttonData="LEFT"/>
+            </buttons>
+        </ButtonBar>
+        <ButtonBar layoutX="1.0" layoutY="168.0" prefHeight="40.0" prefWidth="705.0">
+            <buttons>
+                <Button fx:id="multiButton" mnemonicParsing="false" onAction="#multi" text="Multi-Species" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="trollingButton" mnemonicParsing="false" onAction="#trolling" text="Trolling" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="bumperButton" mnemonicParsing="false" onAction="#bumper" text="Bumper Boats" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="landButton" mnemonicParsing="false" onAction="#land" text="Land Shark" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="bassholeButton" mnemonicParsing="false" onAction="#basshole" text="Basshole Gone Wild" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="sizeButton" mnemonicParsing="false" onAction="#size" text="Size Matters" ButtonBar.buttonData="LEFT"/>
+            </buttons>
+        </ButtonBar>
+        <ButtonBar layoutX="-1.0" layoutY="48.0" prefHeight="40.0" prefWidth="705.0">
+            <buttons>
+                <Button fx:id="day1Button" mnemonicParsing="false" onAction="#day1" text="Day 1" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="day2Button" mnemonicParsing="false" onAction="#day2" text="Day 2" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="day3Button" mnemonicParsing="false" onAction="#day3" text="Day 3" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="day4Button" mnemonicParsing="false" onAction="#day4" text="Day 4" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="day5Button" mnemonicParsing="false" onAction="#day5" text="Day 5" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="day6Button" mnemonicParsing="false" onAction="#day6" text="Day 6" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="day7Button" mnemonicParsing="false" onAction="#day7" text="Day 7" ButtonBar.buttonData="LEFT"/>
+            </buttons>
+        </ButtonBar>
+        <ButtonBar layoutX="-1.0" layoutY="88.0" prefHeight="40.0" prefWidth="705.0">
+            <buttons>
+                <Button fx:id="walleyeButton" mnemonicParsing="false" onAction="#walleye" text="Walleye" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="bassButton" mnemonicParsing="false" onAction="#bass" text="Bass" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="northernButton" mnemonicParsing="false" onAction="#northern" text="Northern" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="muskyButton" mnemonicParsing="false" onAction="#musky" text="Musky" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="perchButton" mnemonicParsing="false" onAction="#perch" text="Perch" ButtonBar.buttonData="LEFT"/>
+                <Button fx:id="crappieButton" mnemonicParsing="false" onAction="#crappie" text="Crappie" ButtonBar.buttonData="LEFT"/>
+            </buttons>
+        </ButtonBar>
+        <ScrollPane layoutX="14.0" layoutY="233.0" prefHeight="321.0" prefWidth="681.0">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="676.0" />
+            </content>
+        </ScrollPane>
+        <HBox layoutX="14.0" layoutY="208.0" prefHeight="25.0" prefWidth="669.0">
+            <children>
+                <TextField fx:id="inputField" />
+                <Button mnemonicParsing="false" onAction="#getText" text="Enter" />
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
