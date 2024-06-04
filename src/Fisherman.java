@@ -1,21 +1,23 @@
 import java.io.*;
 import java.util.*;
 public class Fisherman {
-    private int score = 0;
-    public int largestWalleyePlace = 0;
-    public int largestPikePlace = 0;
-    public int largestBassPlace = 0;
-    public int largestPerchPlace = 0;
-    public int largestCrappiePlace = 0;
-    public int hotMultiSpeciesActionPlace = 0;
-    public int mostFishPlace = 0;
-    public int DT6PackTrollingPlace = 0;
-    public int mostFishInOneDayPlace = 0;
-    public int mostWalleyePlace = 0;
-    public int meatHoleBumperBoatsPlace = 0;
-    public int landSharkPlace = 0;
-    public int bassHoleGoneWildPlace = 0;
-    public int sizeMattersPlace = 0;
+    private double score = 0;
+    public double largestWalleyePlace = 0;
+    public double largestPikePlace = 0;
+    public double largestBassPlace = 0;
+    public double largestPerchPlace = 0;
+    public double largestCrappiePlace = 0;
+    public double hotMultiSpeciesActionPlace = 0;
+    public double mostFishPlace = 0;
+    public double DT6PackTrollingPlace = 0;
+    public double mostFishInOneDayPlace = 0;
+    public double mostWalleyePlace = 0;
+    public double meatHoleBumperBoatsPlace = 0;
+    public double landSharkPlace = 0;
+    public double bassHoleGoneWildPlace = 0;
+    public double sizeMattersPlace = 0;
+    public double juneMadnessPlace = 0;
+    public double largestMuskyPlace = 0;
     private final String name;
     private ArrayList<Fish> arrWalleye= new ArrayList<Fish>();
     private ArrayList<Fish> arrBass= new ArrayList<Fish>();
@@ -228,8 +230,13 @@ public class Fisherman {
                 longest = arrNorthern.get(i).getLength();
             }
         }
-        for(int i = 0; i < arrMusky.size(); i++) {
-            if (arrMusky.get(i).getLength() > longest) {
+        return longest;
+    }
+
+    public double getLongestMusky(){
+        double longest = 0;
+        for(int i = 0; i < arrMusky.size(); i++){
+            if(arrMusky.get(i).getLength() > longest){
                 longest = arrMusky.get(i).getLength();
             }
         }
@@ -246,39 +253,27 @@ public class Fisherman {
         return longest;
     }
 
-    public void printFish(int day){
-        System.out.println("Day: " + day);
-        if(day == 1){
-            print(arrD1);
-        } else if(day == 2){
-            print(arrD2);
-        } else if(day == 3){
-            print(arrD3);
-        } else if(day == 4){
-            print(arrD4);
-        } else if(day == 5){
-            print(arrD5);
-        } else if(day == 6){
-            print(arrD6);
-        } else if(day == 7){
-            print(arrD7);
-        }
+    public String printFish(){
+        return name + ": \n\t Day 1: " + print(arrD1) + "\n\t Day 2: " + print(arrD2) +
+                "\n\t Day 3: " + print(arrD3) + "\n\t Day 4: " + print(arrD4) + "\n\t Day 5: " + print(arrD5)
+                + "\n\t Day 6: " + print(arrD6) + "\n\t Day 7: " + print(arrD7);
     }
 
-    private void print(ArrayList<Fish> temp){
-        System.out.println(name);
-        if(temp.size() != 0) {
+    private String print(ArrayList<Fish> temp){
+        String toReturn = "";
+        if(!temp.isEmpty()) {
             for (int i = 0; i < temp.size() - 1; i++) {
-                System.out.print(temp.get(i).getLength() + " " + temp.get(i).getType() + ", ");
+                toReturn += (temp.get(i).getLength() + " " + temp.get(i).getType() + ", ");
             }
-            System.out.println(temp.get(temp.size() - 1).getLength() + " " + temp.get(temp.size() - 1).getType());
+            toReturn += (temp.getLast().getLength() + " " + temp.get(temp.size() - 1).getType());
         }
+        return toReturn;
     }
 
-    public int getScore() {
+    public double getScore() {
         score = largestWalleyePlace + largestPikePlace + largestBassPlace + hotMultiSpeciesActionPlace + largestPerchPlace +
                 largestCrappiePlace + mostFishPlace + DT6PackTrollingPlace + mostFishInOneDayPlace + mostWalleyePlace +
-                meatHoleBumperBoatsPlace + landSharkPlace + bassHoleGoneWildPlace + sizeMattersPlace;
+                meatHoleBumperBoatsPlace + landSharkPlace + bassHoleGoneWildPlace + sizeMattersPlace + juneMadnessPlace + largestMuskyPlace;
         return score;
     }
 }

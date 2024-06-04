@@ -131,7 +131,7 @@ public class Tournament {
                 day = -1;
             }
         } while (day < 1 && day > 7);
-        temp.printFish(day);
+        temp.printFish();
     }
 
     private static int chooseFisherman(){

@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -34,8 +35,9 @@
                 <Button fx:id="trollingButton" mnemonicParsing="false" onAction="#trolling" text="Trolling" ButtonBar.buttonData="LEFT" />
                 <Button fx:id="bumperButton" mnemonicParsing="false" onAction="#bumper" text="Bumper Boats" ButtonBar.buttonData="LEFT" />
                 <Button fx:id="landButton" mnemonicParsing="false" onAction="#land" text="Land Shark" ButtonBar.buttonData="LEFT" />
-                <Button fx:id="bassholeButton" mnemonicParsing="false" onAction="#basshole" text="Basshole Gone Wild" ButtonBar.buttonData="LEFT" />
+                <Button fx:id="bassholeButton" mnemonicParsing="false" onAction="#basshole" text="Gone Wild" ButtonBar.buttonData="LEFT" />
                 <Button fx:id="sizeButton" mnemonicParsing="false" onAction="#size" text="Size Matters" ButtonBar.buttonData="LEFT" />
+            <Button fx:id="juneButton" mnemonicParsing="false" onAction="#june" text="June Madness" ButtonBar.buttonData="LEFT" />
             </buttons>
         </ButtonBar>
         <ButtonBar layoutX="-1.0" layoutY="48.0" prefHeight="40.0" prefWidth="705.0">
@@ -60,9 +62,9 @@
             </buttons>
         </ButtonBar>
         <ScrollPane layoutX="14.0" layoutY="233.0" prefHeight="321.0" prefWidth="681.0">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="676.0" />
-            </content>
+         <content>
+            <TextArea fx:id="textArea" prefHeight="313.0" prefWidth="666.0" />
+         </content>
         </ScrollPane>
         <HBox layoutX="14.0" layoutY="208.0" prefHeight="25.0" prefWidth="669.0">
             <children>

@@ -1,57 +1,61 @@
+import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.*;
-import java.util.Properties;
 
 public class EmailSender {
-    public static void main(String[] args) throws MessagingException {
-        // Recipient's email ID needs to be mentioned.
-        String to = "FIXME";
 
-        // Sender's email ID needs to be mentioned
-        String from = "FIXME";
-        final String username = "FIXME"; // your Gmail username (or any other email service)
-        final String password = "FIXME"; // your Gmail password (or any other email service)
+    public static void sendEmail(String subject, String toSend) {
+        // email ID of Recipient.
+        String recipient = "";
+
+        // email ID of Sender.
+        String sender = "";
 
         // Assuming you are sending email through relay.jangosmtp.net
         String host = "smtp.gmail.com";
 
-        Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", "587");
+        // Get system properties
+        Properties properties = System.getProperties();
 
-        // Get the Session object.
-        Session session = Session.getInstance(props,
-                new javax.mail.Authenticator() {
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(username, password);
-                    }
-                });
+        // Setup mail server
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
 
+        // Get the Session object.// and pass username and password
+        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("", "");
+            }
+        });
 
-        // Create a default MimeMessage object.
-        Message message = new MimeMessage(session);
+        // Used to debug SMTP issues
+        session.setDebug(true);
 
-        // Set From: header field of the header.
-        message.setFrom(new InternetAddress(from));
+        try {
+            // Create a default MimeMessage object.
+            MimeMessage message = new MimeMessage(session);
 
-        // Set To: header field of the header.
-        message.setRecipients(Message.RecipientType.TO,
-                InternetAddress.parse(to));
+            // Set From: header field of the header.
+            message.setFrom(new InternetAddress(sender));
 
-        // Set Subject: header field
-        message.setSubject("Testing Subject");
+            // Set To: header field of the header.
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
 
-        // Now set the actual message
-        message.setText("Hello, this is sample for to check send " +
-                "email using JavaMailAPI ");
+            // Set Subject: header field
+            message.setSubject(subject);
 
-        // Send message
-        Transport.send(message);
+            // Now set the actual message
+            message.setText(toSend);
 
-        System.out.println("Sent message successfully....");
-
+            // Send message
+            Transport.send(message);
+            System.out.println("Sent message successfully....");
+        } catch (MessagingException mex) {
+            mex.printStackTrace();
+        }
     }
 }
+
 
