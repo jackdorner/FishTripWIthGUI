@@ -1,0 +1,1 @@
+Consider serializing variables and list to json at end of program and then un serializing on program restart
