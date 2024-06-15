@@ -996,24 +996,13 @@ public class Controller {
     }
 
     private static void getPlace(ArrayList<Score> scores) {
-        int count = 0;
-        for (int i = 0; i < scores.size(); i++) {
-            if (scores.get(i).score == 0) {
-                count++;
-            }
-        }
-        for (int i = 0; i < scores.size(); i++) {
-            if (scores.get(i).score == 0) {
-                scores.get(i).place = 6 - count;
-            } else {
-                //scores.get(i).place = i + 1 - count;
-                scores.get(i).place = 5 - i;
-            }
-
-        }
+        scores.sort(Score::compareTo);
+        scores.get(0).place = 1;
         for (int i = 1; i < scores.size(); i++) {
-            if (scores.get(i - 1).score == scores.get(i).score) {
+            if (scores.get(i).score == scores.get(i - 1).score) {
                 scores.get(i).place = scores.get(i - 1).place;
+            } else {
+                scores.get(i).place = i + 1;
             }
         }
     }

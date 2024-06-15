@@ -191,6 +191,22 @@ public class Tournament {
         for (int i = 0; i < scores.size(); i++){
             System.out.println(i+1 + ": " + scores.get(i).name + " (" + scores.get(i).score +")");
         }
+        System.out.println("Largest Walleye: Bob(" + Bob.largestWalleyePlace + ") " + "Brent(" + Brent.largestWalleyePlace + ") " + "Glen(" + Glen.largestWalleyePlace + ") " + "Jack(" + Jack.largestWalleyePlace + ") " + "Mark(" + Mark.largestWalleyePlace + ") "  +
+                "\nLargest Pike: Bob(" + Bob.largestPikePlace + ") " + "Brent(" + Brent.largestPikePlace + ") " + "Glen(" + Glen.largestPikePlace + ") " + "Jack(" + Jack.largestPikePlace + ") " + "Mark(" + Mark.largestPikePlace + ") "  +
+                "\nLargest Bass: Bob(" + Bob.largestBassPlace + ") " + "Brent(" + Brent.largestBassPlace + ") " + "Glen(" + Glen.largestBassPlace + ") " + "Jack(" + Jack.largestBassPlace + ") " + "Mark(" + Mark.largestBassPlace + ") "  +
+                "\nLargest Perch: Bob(" + Bob.largestPerchPlace + ") " + "Brent(" + Brent.largestPerchPlace + ") " + "Glen(" + Glen.largestPerchPlace + ") " + "Jack(" + Jack.largestPerchPlace + ") " + "Mark(" + Mark.largestPerchPlace + ") "  +
+                "\nLargest Crappie: Bob(" + Bob.largestCrappiePlace + ") " + "Brent(" + Brent.largestCrappiePlace + ") " + "Glen(" + Glen.largestCrappiePlace + ") " + "Jack(" + Jack.largestCrappiePlace + ") " + "Mark(" + Mark.largestCrappiePlace + ") "  +
+                "\nLargest Musky: Bob(" + Bob.largestMuskyPlace + ") " + "Brent(" + Brent.largestMuskyPlace + ") " + "Glen(" + Glen.largestMuskyPlace + ") " + "Jack(" + Jack.largestMuskyPlace + ") " + "Mark(" + Mark.largestMuskyPlace + ") "  +
+                "\nMost Fish: Bob(" + Bob.mostFishPlace + ") " + "Brent(" + Brent.mostFishPlace + ") " + "Glen(" + Glen.mostFishPlace + ") " + "Jack(" + Jack.mostFishPlace + ") " + "Mark(" + Mark.mostFishPlace + ") "  +
+                "\nMost Fish In One Day: Bob(" + Bob.mostFishInOneDayPlace + ") " + "Brent(" + Brent.mostFishInOneDayPlace + ") " + "Glen(" + Glen.mostFishInOneDayPlace + ") " + "Jack(" + Jack.mostFishInOneDayPlace + ") " + "Mark(" + Mark.mostFishInOneDayPlace + ") "  +
+                "\nMost Walleye: Bob(" + Bob.mostWalleyePlace + ") " + "Brent(" + Brent.mostWalleyePlace + ") " + "Glen(" + Glen.mostWalleyePlace + ") " + "Jack(" + Jack.mostWalleyePlace + ") " + "Mark(" + Mark.mostWalleyePlace + ") "  +
+                "\nDT6 Pack Trolling: Bob(" + Bob.DT6PackTrollingPlace + ") " + "Brent(" + Brent.DT6PackTrollingPlace + ") " + "Glen(" + Glen.DT6PackTrollingPlace + ") " + "Jack(" + Jack.DT6PackTrollingPlace + ") " + "Mark(" + Mark.DT6PackTrollingPlace + ") "  +
+                "\nBumper Boats: Bob(" + Bob.meatHoleBumperBoatsPlace + ") " + "Brent(" + Brent.meatHoleBumperBoatsPlace + ") " + "Glen(" + Glen.meatHoleBumperBoatsPlace + ") " + "Jack(" + Jack.meatHoleBumperBoatsPlace + ") " + "Mark(" + Mark.meatHoleBumperBoatsPlace + ") "  +
+                "\nLand Shark: Bob(" + Bob.landSharkPlace + ") " + "Brent(" + Brent.landSharkPlace + ") " + "Glen(" + Glen.landSharkPlace + ") " + "Jack(" + Jack.landSharkPlace + ") " + "Mark(" + Mark.landSharkPlace + ") "  +
+                "\nTwin Sisters Gone Wild: Bob(" + Bob.bassHoleGoneWildPlace + ") " + "Brent(" + Brent.bassHoleGoneWildPlace + ") " + "Glen(" + Glen.bassHoleGoneWildPlace + ") " + "Jack(" + Jack.bassHoleGoneWildPlace + ") " + "Mark(" + Mark.bassHoleGoneWildPlace + ") "  +
+                "\nHot Multi Species Action: Bob(" + Bob.hotMultiSpeciesActionPlace + ") " + "Brent(" + Brent.hotMultiSpeciesActionPlace + ") " + "Glen(" + Glen.hotMultiSpeciesActionPlace + ") " + "Jack(" + Jack.hotMultiSpeciesActionPlace + ") " + "Mark(" + Mark.hotMultiSpeciesActionPlace + ") "+
+                "\nJune Madness: Bob(" + Bob.juneMadnessPlace + ") " + "Brent(" + Brent.juneMadnessPlace + ") " + "Glen(" + Glen.juneMadnessPlace + ") " + "Jack(" + Jack.juneMadnessPlace + ") " + "Mark(" + Mark.juneMadnessPlace + ") "  +
+                "\nSize Matters: Bob(" + Bob.sizeMattersPlace + ") " + "Brent(" + Brent.sizeMattersPlace + ") " + "Glen(" + Glen.sizeMattersPlace + ") " + "Jack(" + Jack.sizeMattersPlace + ") " + "Mark(" + Mark.sizeMattersPlace + ") ");
     }
 
     private static void addTournamentResults(){
@@ -593,8 +609,8 @@ public class Tournament {
             if (scores.get(i).score == 0){
                 scores.get(i).place = 6 - count;
             } else {
-                //scores.get(i).place = i + 1 - count;
-                scores.get(i).place = 5 - i;
+                scores.get(i).place = i + 1 - count;
+                //scores.get(i).place = 5 - i;
             }
 
         }
